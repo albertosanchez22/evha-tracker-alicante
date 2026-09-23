@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promociones Alicante - Compra</title>
+  <style>
+    :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #17202a; background: #f4f6f8; }
+    body { margin: 0; padding: 32px 20px; }
+    main { max-width: 1200px; margin: auto; }
+    h1 { margin: 0 0 6px; font-size: 28px; }
+    .summary { margin: 0 0 24px; color: #5d6873; }
+    .controls { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    input, select { border: 1px solid #cbd3da; border-radius: 6px; background: white; padding: 10px 12px; font-size: 14px; }
+    input { flex: 1 1 280px; }
+    .table-wrap { overflow-x: auto; background: white; border: 1px solid #dfe4e8; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; min-width: 850px; }
+    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #edf0f2; vertical-align: top; }
+    th { background: #263746; color: white; font-size: 13px; cursor: pointer; white-space: nowrap; }
+    tr:last-child td { border-bottom: 0; }
+    tr:hover td { background: #f7fafc; }
+    .fase { font-weight: 600; }
+    .cerrado { color: #a33a2b; font-weight: 600; }
+    .count { color: #5d6873; font-size: 14px; margin: 0 0 10px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Promociones de compra en Alicante</h1>
+    <p class="summary">Provincia: Alicante · Municipio: Alicante/Alacant · 16 promociones</p>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Buscar por expediente, fase o estado...">
+      <select id="phase">
+        <option value="">Todas las fases</option>
+        <option>En licitación</option>
+        <option>Adjudicadas</option>
+        <option>En construcción</option>
+      </select>
+    </div>
+    <p id="count" class="count"></p>
+    <div class="table-wrap">
+      <table id="promotions">
+        <thead>
+          <tr>
+            <th>Expediente</th>
+            <th>Ciudad</th>
+            <th>Provincia</th>
+            <th>Calle</th>
+            <th>Barrio</th>
+            <th>Constructora</th>
+            <th>Modalidad</th>
+            <th>Fase</th>
+            <th>Estado de inscripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A-ECSA-24/00003</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>AV DENIA 1</td><td>Complejo Vistahermosa</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-24/00006</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL BANDA LOS CLAVELES 6A. PG 3 PP I/I FCA SACOS</td><td>El Baver</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-26/00001</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL HERMANOS MACHADO 1</td><td>El Baver</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00096</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL AVELLANEDA R-3 - APD/4 RABASA II B</td><td>Rabassa</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00095</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL AVELLANEDA R-2 - APD/4 RABASA II B</td><td>Rabassa</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00094</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL AVELLANEDA R-1 - APD/4 RABASA II B</td><td>Rabassa</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-24/00010</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>AV JAIME I 9 APD/ PARCELA I-1</td><td>No indicado</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-24/00009</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL ENFERMERA ANGELINA CEBALLO PARCELA R-13A</td><td>El Pau</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-24/00008</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL MED RICARDO FERRE PARCELA R-12</td><td>Joan Pau II / Juan Pablo II</td><td></td><td>VENTA</td><td class="fase">En licitación</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00017</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL PONCE DE LEON APD/4 II R-6</td><td>Rabassa</td><td>ALBALUZ, DESARROLLOS URBANOS, S.L.</td><td>ALQUILER EVHA, VENTA</td><td class="fase">Adjudicadas</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00016</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL PONCE DE LEON APD/4 II R-5</td><td>Rabassa</td><td>ALBALUZ, DESARROLLOS URBANOS, S.L.</td><td>ALQUILER EVHA, VENTA</td><td class="fase">Adjudicadas</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00042</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL PONCE DE LEON R-10-11 -APD/4 RABASA IIB</td><td>Rabassa</td><td>ALBALUZ, DESARROLLOS URBANOS, S.L.</td><td>ALQUILER EVHA, VENTA</td><td class="fase">Adjudicadas</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00015</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL JACINTO VERDAGUER APD/4 II R-4</td><td>Rabassa</td><td>ALBALUZ, DESARROLLOS URBANOS, S.L.</td><td>ALQUILER EVHA, VENTA</td><td class="fase">Adjudicadas</td><td>No indicado</td></tr>
+          <tr><td>A-ECSA-25/00019</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL VASCO DE GAMA APD/4 II R-13</td><td>Rabassa</td><td>ALBALUZ, DESARROLLOS URBANOS, S.L.</td><td>ALQUILER EVHA, VENTA</td><td class="fase">Adjudicadas</td><td>No indicado</td></tr>
+          <tr><td>A-PPVP-26/00003</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>C/ SAN MIGUEL DE SALINAS S/N</td><td>Quatre-centes Vivendes</td><td>FAMA REHABILITACIONES, S.L.U.</td><td>ALQUILER EVHA, VENTA</td><td class="fase">En construcción</td><td class="cerrado">Cerrado el plazo de inscripción</td></tr>
+          <tr><td>A-PPVP-26/00004</td><td>ALICANTE/ALACANT</td><td>ALICANTE</td><td>CL TORMOS 0</td><td>Aigua Amarga</td><td>AITANA ACTIVIDADES DE CONSTRUCCION Y SERVICIOS, S.L.</td><td>ALQUILER EVHA, VENTA</td><td class="fase">En construcción</td><td class="cerrado">Cerrado el plazo de inscripción</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <script>
+    const rows = [...document.querySelectorAll("#promotions tbody tr")];
+    const search = document.querySelector("#search");
+    const phase = document.querySelector("#phase");
+    const count = document.querySelector("#count");
+    function update() {
+      const query = search.value.toLowerCase();
+      const selectedPhase = phase.value;
+      let visible = 0;
+      rows.forEach(row => {
+        const matchesText = row.textContent.toLowerCase().includes(query);
+        const matchesPhase = !selectedPhase || row.cells[7].textContent === selectedPhase;
+        row.hidden = !(matchesText && matchesPhase);
+        if (!row.hidden) visible++;
+      });
+      count.textContent = `${visible} promoción${visible === 1 ? "" : "es"} visible${visible === 1 ? "" : "s"}`;
+    }
+    search.addEventListener("input", update);
+    phase.addEventListener("change", update);
+    update();
+  </script>
+</body>
+</html>

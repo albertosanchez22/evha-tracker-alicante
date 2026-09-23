@@ -1,0 +1,306 @@
+{
+  "promociones": [
+    {
+      "expediente": "A-ECSA-24/00003",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "AV DENIA 1",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 10,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "Complejo Vistahermosa"
+    },
+    {
+      "expediente": "A-ECSA-24/00006",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "CL BANDA LOS CLAVELES  6A. PG 3 PP I/I FCA SACOS",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 25,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "El Baver"
+    },
+    {
+      "expediente": "A-ECSA-24/00008",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "CL MED RICARDO FERRE  PARCELA R-12",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 80,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "Joan Pau II / Juan Pablo II"
+    },
+    {
+      "expediente": "A-ECSA-24/00009",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "CL ENFERMERA ANGELINA CEBALL 0 PARCELA R-13A",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 56,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "El Pau"
+    },
+    {
+      "expediente": "A-ECSA-24/00010",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "AV JAIME I 9 APD/ PARCELA I-1",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 50,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "No indicado"
+    },
+    {
+      "expediente": "A-ECSA-25/00015",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "ALBALUZ, DESARROLLOS URBANOS, S.L.",
+      "direccion": "CL JACINTO VERDAGUER  APD/4 II R-4",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 14,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 2,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-25/00016",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "ALBALUZ, DESARROLLOS URBANOS, S.L.",
+      "direccion": "CL PONCE DE LEON  APD/4 II R-5",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 13,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 2,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-25/00017",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "ALBALUZ, DESARROLLOS URBANOS, S.L.",
+      "direccion": "CL PONCE DE LEON  APD/4 II R-6",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 9,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 2,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-25/00019",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "ALBALUZ, DESARROLLOS URBANOS, S.L.",
+      "direccion": "CL VASCO DE GAMA  APD/4 II R-13",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 18,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 3,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-25/00042",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "ALBALUZ, DESARROLLOS URBANOS, S.L.",
+      "direccion": "CL PONCE DE LEON  R-10-11 -APD/4 RABASA IIB",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 23,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 4,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-25/00094",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "CL AVELLANEDA  R-1  - APD/4 RABASA II B",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 21,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-25/00095",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "CL AVELLANEDA  R-2 - APD/4 RABASA II B",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 18,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-25/00096",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "CL AVELLANEDA  R-3 - APD/4 RABASA II B",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 30,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "Rabassa"
+    },
+    {
+      "expediente": "A-ECSA-26/00001",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "",
+      "direccion": "CL HERMANOS MACHADO 1",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 71,
+          "modalidad": "VENTA"
+        }
+      ],
+      "fase": "SL",
+      "fase_nombre": "En licitacion",
+      "barrio": "El Baver"
+    },
+    {
+      "expediente": "A-PPVP-26/00003",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "FAMA REHABILITACIONES, S.L.U.",
+      "direccion": "C/ SAN MIGUEL DE SALINAS S/N",
+      "estado_inscripcion": "Cerrado el plazo de inscripción",
+      "disponibilidad": [
+        {
+          "unidades": 24,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 5,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "CO",
+      "fase_nombre": "En construccion",
+      "barrio": "Quatre-centes Vivendes"
+    },
+    {
+      "expediente": "A-PPVP-26/00004",
+      "municipio": "ALICANTE/ALACANT",
+      "provincia": "ALICANTE",
+      "promotor": "AITANA ACTIVIDADES DE CONSTRUCCION Y SERVICIOS, S.L.",
+      "direccion": "CL TORMOS 0",
+      "estado_inscripcion": "Cerrado el plazo de inscripción",
+      "disponibilidad": [
+        {
+          "unidades": 55,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 8,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "CO",
+      "fase_nombre": "En construccion",
+      "barrio": "Aigua Amarga"
+    }
+  ],
+  "ultimaActualizacion": "2026-09-23T11:39:44.789129+00:00",
+  "proximaActualizacion": "2026-09-23T17:39:44.789129+00:00"
+}

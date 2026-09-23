@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Nadie accede directamente desde el cliente: solo las Cloud Functions
+    // (que usan el Admin SDK y no pasan por estas reglas) leen y escriben.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

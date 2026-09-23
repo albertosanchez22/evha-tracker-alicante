@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Vive Alicante</title>
+  <style>
+    :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #17202a; background: #f4f6f8; }
+    body { margin: 0; padding: 32px 20px; }
+    main { max-width: 1440px; margin: auto; }
+    h1 { margin: 0 0 6px; font-size: 28px; }
+    .summary { color: #5d6873; margin: 0 0 20px; }
+    .status { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; padding: 14px 16px; background: #e9f2f1; border-left: 4px solid #19756d; border-radius: 6px; }
+    .countdown { font-size: 20px; font-weight: 700; color: #145d57; }
+    .updated { color: #52616b; font-size: 13px; }
+    .controls { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+    input, select { border: 1px solid #cbd3da; border-radius: 6px; background: white; padding: 10px 12px; font-size: 14px; }
+    input { flex: 1 1 320px; }
+    .count { color: #5d6873; font-size: 14px; }
+    .table-wrap { overflow-x: auto; background: white; border: 1px solid #dfe4e8; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; min-width: 1150px; }
+    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #edf0f2; vertical-align: top; }
+    th { background: #263746; color: white; font-size: 13px; white-space: nowrap; }
+    tr:last-child td { border-bottom: 0; }
+    tr:hover td { background: #f7fafc; }
+    .fase { font-weight: 600; }
+    .cerrado { color: #a33a2b; font-weight: 600; }
+    .error { color: #a33a2b; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Promociones de compra en Alicante</h1>
+    <p class="summary">Provincia: Alicante · Municipio: Alicante/Alacant · Modalidad: venta</p>
+    <section class="status" aria-live="polite">
+      <span>Próxima actualización:</span>
+      <span id="countdown" class="countdown">Cargando...</span>
+      <span id="updated" class="updated"></span>
+    </section>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Buscar por expediente, calle, barrio o constructora...">
+      <select id="phase">
+        <option value="">Todas las fases</option>
+        <option>En licitación</option>
+        <option>Adjudicadas</option>
+        <option>En construcción</option>
+        <option>Terminadas</option>
+      </select>
+    </div>
+    <p id="count" class="count"></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Expediente</th><th>Ciudad</th><th>Provincia</th><th>Calle</th><th>Barrio</th><th>Constructora</th><th>Modalidad</th><th>Fase</th><th>Estado de inscripción</th></tr></thead>
+        <tbody id="rows"><tr><td colspan="9">Cargando promociones...</td></tr></tbody>
+      </table>
+    </div>
+  </main>
+  <script>
+    const search = document.querySelector('#search');
+    const phase = document.querySelector('#phase');
+    const rows = document.querySelector('#rows');
+    const count = document.querySelector('#count');
+    const countdown = document.querySelector('#countdown');
+    const updated = document.querySelector('#updated');
+    let promotions = [];
+    let nextUpdate = null;
+    let reloadPending = false;
+
+    function cell(value, className = '') {
+      const element = document.createElement('td');
+      element.textContent = value || 'No indicado';
+      if (className) element.className = className;
+      return element;
+    }
+
+    function render() {
+      const query = search.value.trim().toLowerCase();
+      const selectedPhase = phase.value;
+      const visible = promotions.filter(promo => {
+        const matchesText = JSON.stringify(promo).toLowerCase().includes(query);
+        return matchesText && (!selectedPhase || promo.fase === selectedPhase);
+      });
+      rows.replaceChildren();
+      visible.forEach(promo => {
+        const row = document.createElement('tr');
+        row.append(cell(promo.expediente));
+        row.append(cell(promo.municipio));
+        row.append(cell(promo.provincia));
+        row.append(cell(promo.direccion));
+        row.append(cell(promo.barrio));
+        row.append(cell(promo.promotor));
+        row.append(cell((promo.disponibilidad || []).map(item => `${item.unidades} en ${item.modalidad}`).join(', ')));
+        row.append(cell(({SL: 'En licitación', SA: 'Adjudicadas', CO: 'En construcción', TE: 'Terminadas'})[promo.fase] || promo.fase, 'fase'));
+        row.append(cell(promo.estado_inscripcion, promo.estado_inscripcion && promo.estado_inscripcion !== 'No indicado' ? 'cerrado' : ''));
+        rows.append(row);
+      });
+      count.textContent = `${visible.length} promoción${visible.length === 1 ? '' : 'es'} visible${visible.length === 1 ? '' : 's'}`;
+    }
+
+    function updateCountdown() {
+      if (!nextUpdate) { countdown.textContent = 'Pendiente de primera actualización'; return; }
+      const remaining = Math.max(0, nextUpdate - Date.now());
+      const totalSeconds = Math.floor(remaining / 1000);
+      const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+      const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+      const seconds = String(totalSeconds % 60).padStart(2, '0');
+      countdown.textContent = `${hours}:${minutes}:${seconds}`;
+      if (remaining === 0 && !reloadPending) { reloadPending = true; load(); }
+    }
+
+    async function load() {
+      try {
+        const response = await fetch(`data.json?ts=${Date.now()}`);
+        if (!response.ok) throw new Error('No se pudieron cargar las promociones');
+        const data = await response.json();
+        promotions = data.promociones || [];
+        nextUpdate = data.proximaActualizacion ? Date.parse(data.proximaActualizacion) : null;
+        updated.textContent = data.ultimaActualizacion ? `Última actualización: ${new Date(data.ultimaActualizacion).toLocaleString('es-ES')}` : '';
+        render();
+      } catch (error) {
+        rows.replaceChildren();
+        const row = document.createElement('tr');
+        row.append(cell(error.message, 'error'));
+        rows.append(row);
+      } finally { reloadPending = false; updateCountdown(); }
+    }
+
+    search.addEventListener('input', render);
+    phase.addEventListener('change', render);
+    setInterval(updateCountdown, 1000);
+    load();
+  </script>
+</body>
+</html>
