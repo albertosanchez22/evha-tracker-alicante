@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
+    inputs:
+      test_notification:
+        description: "Enviar un mensaje de prueba por Telegram"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -31,10 +37,18 @@ jobs:
         run: python scripts/generate_data.py
 
       - name: Avisar cambios relevantes por Telegram
+        if: ${{ !inputs.test_notification }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/notify_changes.py /tmp/data-anterior.json public/data.json
+
+      - name: Enviar mensaje de prueba por Telegram
+        if: ${{ inputs.test_notification }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notify_changes.py --test
 
       - name: Publicar cambios
         run: |

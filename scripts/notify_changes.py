@@ -55,6 +55,10 @@ def send_telegram(message: str) -> None:
 
 
 def main() -> None:
+    if len(sys.argv) == 2 and sys.argv[1] == "--test":
+        send_telegram("EVHA Tracker: mensaje de prueba recibido correctamente.")
+        print("Aviso de prueba preparado.")
+        return
     if len(sys.argv) != 3:
         raise SystemExit("Uso: notify_changes.py datos-anteriores.json datos-nuevos.json")
     changes = describe_changes(load_promotions(Path(sys.argv[1])), load_promotions(Path(sys.argv[2])))
