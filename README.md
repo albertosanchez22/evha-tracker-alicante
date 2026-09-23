@@ -39,7 +39,7 @@ Los workflows de `.github/workflows/` publican la web al hacer push y regeneran 
 
 ## Avisos gratuitos por Telegram
 
-El workflow compara cada actualización con la anterior y detecta promociones nuevas y cambios en fase, estado de inscripción, constructora, calle, barrio o viviendas/modalidad. Para activar avisos:
+El workflow compara cada actualización con la anterior y detecta promociones nuevas, retiradas y cambios en fase, estado de inscripción, constructora, calle, barrio o viviendas/modalidad. Envía un mensaje en cada ejecución; si no hay cambios, indica que no hay nada nuevo. Para activar avisos:
 
 1. Crea un bot con `@BotFather` en Telegram y copia su token.
 2. Envía un mensaje al bot y obtiene tu `chat_id` con `https://api.telegram.org/bot<TOKEN>/getUpdates`.

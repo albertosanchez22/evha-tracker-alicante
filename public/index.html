@@ -99,6 +99,7 @@
     let promotions = [];
     let nextUpdate = null;
     let reloadPending = false;
+    let retryAt = 0;
     const phaseNames = {SL: 'En licitación', SA: 'Adjudicadas', CO: 'En construcción', TE: 'Terminadas'};
 
     function normalize(value) {
@@ -151,13 +152,17 @@
 
     function updateCountdown() {
       if (!nextUpdate) { countdown.textContent = 'Pendiente de primera actualización'; return; }
-      const remaining = Math.max(0, nextUpdate - Date.now());
+      const remaining = nextUpdate - Date.now();
+      if (remaining <= 0) {
+        countdown.textContent = 'Actualizando...';
+        if (!reloadPending && Date.now() >= retryAt) { reloadPending = true; load(); }
+        return;
+      }
       const totalSeconds = Math.floor(remaining / 1000);
       const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
       const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
       const seconds = String(totalSeconds % 60).padStart(2, '0');
       countdown.textContent = `${hours}:${minutes}:${seconds}`;
-      if (remaining === 0 && !reloadPending) { reloadPending = true; load(); }
     }
 
     async function load() {
@@ -174,7 +179,11 @@
         const row = document.createElement('tr');
         row.append(cell(error.message, 'error'));
         rows.append(row);
-      } finally { reloadPending = false; updateCountdown(); }
+      } finally {
+        reloadPending = false;
+        retryAt = nextUpdate && nextUpdate <= Date.now() ? Date.now() + 60000 : 0;
+        updateCountdown();
+      }
     }
 
     search.addEventListener('input', render);

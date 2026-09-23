@@ -37,6 +37,11 @@ def describe_changes(previous: dict[str, dict], current: dict[str, dict]) -> lis
                     f"{expediente}: {label} cambió de "
                     f"'{old.get(field, 'No indicado')}' a '{promotion.get(field, 'No indicado')}'"
                 )
+    for expediente, promotion in previous.items():
+        if expediente not in current:
+            changes.append(
+                f"PROMOCIÓN retirada: {expediente} - {promotion.get('municipio', 'sin municipio')}"
+            )
     return changes
 
 
@@ -62,12 +67,12 @@ def main() -> None:
     if len(sys.argv) != 3:
         raise SystemExit("Uso: notify_changes.py datos-anteriores.json datos-nuevos.json")
     changes = describe_changes(load_promotions(Path(sys.argv[1])), load_promotions(Path(sys.argv[2])))
-    if not changes:
-        print("Sin cambios relevantes.")
-        return
-    message = "EVHA Tracker: cambios detectados\n\n" + "\n".join(changes)
+    if changes:
+        message = "EVHA Tracker: cambios detectados\n\n" + "\n".join(changes)
+    else:
+        message = "EVHA Tracker: no hay nada nuevo en la actualización."
     send_telegram(message[:3900])
-    print(f"Avisos preparados: {len(changes)}")
+    print(f"Aviso preparado: {len(changes)} cambios relevantes.")
 
 
 if __name__ == "__main__":
