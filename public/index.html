@@ -46,6 +46,9 @@
         <option>En construcción</option>
         <option>Terminadas</option>
       </select>
+      <select id="registration">
+        <option value="">Todos los estados de inscripción</option>
+      </select>
     </div>
     <p id="count" class="count"></p>
     <div class="table-wrap">
@@ -58,6 +61,7 @@
   <script>
     const search = document.querySelector('#search');
     const phase = document.querySelector('#phase');
+    const registration = document.querySelector('#registration');
     const rows = document.querySelector('#rows');
     const count = document.querySelector('#count');
     const countdown = document.querySelector('#countdown');
@@ -65,6 +69,11 @@
     let promotions = [];
     let nextUpdate = null;
     let reloadPending = false;
+    const phaseNames = {SL: 'En licitación', SA: 'Adjudicadas', CO: 'En construcción', TE: 'Terminadas'};
+
+    function normalize(value) {
+      return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
 
     function cell(value, className = '') {
       const element = document.createElement('td');
@@ -74,11 +83,24 @@
     }
 
     function render() {
-      const query = search.value.trim().toLowerCase();
+      const query = normalize(search.value.trim());
       const selectedPhase = phase.value;
+      const selectedRegistration = registration.value;
       const visible = promotions.filter(promo => {
-        const matchesText = JSON.stringify(promo).toLowerCase().includes(query);
-        return matchesText && (!selectedPhase || promo.fase === selectedPhase);
+        const matchesText = normalize([
+          promo.expediente,
+          promo.municipio,
+          promo.provincia,
+          promo.direccion,
+          promo.barrio,
+          promo.promotor,
+          promo.estado_inscripcion,
+          phaseNames[promo.fase] || promo.fase,
+          ...(promo.disponibilidad || []).map(item => item.modalidad),
+        ].join(' ')).includes(query);
+        return matchesText
+          && (!selectedPhase || (phaseNames[promo.fase] || promo.fase) === selectedPhase)
+          && (!selectedRegistration || promo.estado_inscripcion === selectedRegistration);
       });
       rows.replaceChildren();
       visible.forEach(promo => {
@@ -90,7 +112,7 @@
         row.append(cell(promo.barrio));
         row.append(cell(promo.promotor));
         row.append(cell((promo.disponibilidad || []).map(item => `${item.unidades} en ${item.modalidad}`).join(', ')));
-        row.append(cell(({SL: 'En licitación', SA: 'Adjudicadas', CO: 'En construcción', TE: 'Terminadas'})[promo.fase] || promo.fase, 'fase'));
+        row.append(cell(phaseNames[promo.fase] || promo.fase, 'fase'));
         row.append(cell(promo.estado_inscripcion, promo.estado_inscripcion && promo.estado_inscripcion !== 'No indicado' ? 'cerrado' : ''));
         rows.append(row);
       });
@@ -127,8 +149,16 @@
 
     search.addEventListener('input', render);
     phase.addEventListener('change', render);
+    registration.addEventListener('change', render);
     setInterval(updateCountdown, 1000);
-    load();
+    async function loadAndConfigure() {
+      await load();
+      const statuses = [...new Set(promotions.map(promo => promo.estado_inscripcion).filter(Boolean))].sort();
+      registration.replaceChildren(new Option('Todos los estados de inscripción', ''));
+      statuses.forEach(status => registration.add(new Option(status, status)));
+      render();
+    }
+    loadAndConfigure();
   </script>
 </body>
 </html>
