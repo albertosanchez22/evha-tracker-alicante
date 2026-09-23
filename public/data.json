@@ -170,6 +170,27 @@
       "barrio": "Rabassa"
     },
     {
+      "expediente": "A-ECSA-25/00024",
+      "municipio": "SAN VICENTE DEL RASPEIG",
+      "provincia": "ALICANTE",
+      "promotor": "COOP.V. VIVIENDA ASEQUIBLE SAN VICENTE",
+      "direccion": "CL PIZARRO 33 PARCELA R-6 (B)",
+      "estado_inscripcion": "No indicado",
+      "disponibilidad": [
+        {
+          "unidades": 34,
+          "modalidad": "VENTA"
+        },
+        {
+          "unidades": 9,
+          "modalidad": "ALQUILER EVHA"
+        }
+      ],
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
+      "barrio": "Centro"
+    },
+    {
       "expediente": "A-ECSA-25/00042",
       "municipio": "ALICANTE/ALACANT",
       "provincia": "ALICANTE",
@@ -301,6 +322,6 @@
       "barrio": "Aigua Amarga"
     }
   ],
-  "ultimaActualizacion": "2026-09-23T11:45:19.399947+00:00",
-  "proximaActualizacion": "2026-09-23T17:45:19.399947+00:00"
+  "ultimaActualizacion": "2026-09-23T11:56:02.023562+00:00",
+  "proximaActualizacion": "2026-09-23T17:56:02.023562+00:00"
 }

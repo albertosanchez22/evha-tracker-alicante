@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import main
 
 OUTPUT = Path(__file__).resolve().parents[1] / "public" / "data.json"
+MUNICIPIOS_FILTRO = {"ALICANTE/ALACANT", "SAN VICENTE DEL RASPEIG"}
 
 
 def main_script() -> None:
@@ -19,7 +20,7 @@ def main_script() -> None:
                 continue
             if promocion["provincia"].upper() != "ALICANTE":
                 continue
-            if promocion["municipio"].upper() != "ALICANTE/ALACANT":
+            if promocion["municipio"].upper() not in MUNICIPIOS_FILTRO:
                 continue
             if not any("VENTA" in item["modalidad"] for item in promocion["disponibilidad"]):
                 continue
