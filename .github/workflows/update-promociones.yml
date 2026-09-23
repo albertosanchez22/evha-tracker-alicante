@@ -24,8 +24,17 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Guardar datos anteriores
+        run: cp public/data.json /tmp/data-anterior.json
+
       - name: Generar datos
         run: python scripts/generate_data.py
+
+      - name: Avisar cambios relevantes por Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notify_changes.py /tmp/data-anterior.json public/data.json
 
       - name: Publicar cambios
         run: |

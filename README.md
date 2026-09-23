@@ -37,6 +37,16 @@ La web está publicada en:
 
 Los workflows de `.github/workflows/` publican la web al hacer push y regeneran los datos cada 6 horas. También se pueden ejecutar manualmente desde la pestaña **Actions** de GitHub.
 
+## Avisos gratuitos por Telegram
+
+El workflow compara cada actualización con la anterior y detecta promociones nuevas y cambios en fase, estado de inscripción, constructora, calle, barrio o viviendas/modalidad. Para activar avisos:
+
+1. Crea un bot con `@BotFather` en Telegram y copia su token.
+2. Envía un mensaje al bot y obtiene tu `chat_id` con `https://api.telegram.org/bot<TOKEN>/getUpdates`.
+3. En GitHub, abre **Settings → Secrets and variables → Actions** y crea los secretos `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID`.
+
+Sin esos secretos, el workflow actualiza la web normalmente y simplemente omite el aviso.
+
 ## Configuración
 
 Los filtros principales están en `scripts/generate_data.py`:
