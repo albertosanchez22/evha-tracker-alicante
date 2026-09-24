@@ -32,6 +32,8 @@
     .status-label { font-size: 13px; opacity: .78; }
     .countdown { font-variant-numeric: tabular-nums; font-size: 24px; font-weight: 800; letter-spacing: .04em; }
     .updated { margin-left: auto; color: #c8ded9; font-size: 12px; }
+    .force-update { border: 1px solid rgba(245, 255, 251, .55); border-radius: 5px; padding: 9px 12px; color: #f5fffb; font-size: 12px; font-weight: 800; text-decoration: none; }
+    .force-update:hover { background: rgba(245, 255, 251, .12); }
     .controls { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
     input, select { min-height: 44px; border: 1px solid #c8d7d5; border-radius: 5px; outline: none; background: rgba(255, 253, 248, .9); color: var(--ink); padding: 10px 13px; font: inherit; font-size: 13px; }
     input { flex: 1 1 360px; }
@@ -66,6 +68,7 @@
       <span class="status-label">Próxima actualización</span>
       <span id="countdown" class="countdown">Cargando...</span>
       <span id="updated" class="updated"></span>
+      <a class="force-update" href="https://github.com/albertosanchez22/evha-tracker-alicante/actions/workflows/update-promociones.yml" target="_blank" rel="noopener">Actualizar ahora</a>
     </section>
     <div class="controls">
       <input id="search" type="search" placeholder="Buscar por expediente, calle, barrio o constructora...">
