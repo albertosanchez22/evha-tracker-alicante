@@ -17,7 +17,7 @@ https://github.com/albertosanchez22/evha-tracker-alicante
 - `scripts/notify_changes.py`: compara el JSON anterior y el nuevo y envia avisos por Telegram.
 - `public/index.html`: interfaz publica, filtros, tabla y contador de actualizacion.
 - `public/data.json`: datos generados; no editarlo manualmente salvo para una prueba puntual.
-- `.github/workflows/update-promociones.yml`: actualizacion automatica cada 6 horas y publicacion.
+- `.github/workflows/update-promociones.yml`: actualizacion automatica cada 5 minutos y publicacion.
 - `.github/workflows/deploy-pages.yml`: despliegue de `public/` en GitHub Pages despues de cada push a `main`.
 - `requirements.txt`: `requests` y `beautifulsoup4`.
 

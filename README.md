@@ -8,7 +8,7 @@ Scraper y tabla pública de promociones del Plan Vive de EVHA. La web muestra pr
 2. `main.py` extrae expediente, municipio, provincia, dirección, promotora, modalidades y estado de inscripción.
 3. Las coordenadas públicas de EVHA se consultan en OpenStreetMap/Nominatim para obtener el barrio cuando está disponible.
 4. El script genera `public/data.json`.
-5. GitHub Actions ejecuta la actualización cada 6 horas.
+5. GitHub Actions ejecuta la actualización cada 5 minutos.
 6. GitHub Pages sirve `public/index.html`, con búsqueda, filtro por fase y cuenta atrás hasta la siguiente actualización.
 
 ## Probar localmente
@@ -35,7 +35,7 @@ La web está publicada en:
 
 `https://albertosanchez22.github.io/evha-tracker-alicante/`
 
-Los workflows de `.github/workflows/` publican la web al hacer push y regeneran los datos cada 6 horas. También se pueden ejecutar manualmente desde la pestaña **Actions** de GitHub.
+Los workflows de `.github/workflows/` publican la web al hacer push y regeneran los datos cada 5 minutos. También se pueden ejecutar manualmente desde la pestaña **Actions** de GitHub.
 
 ## Avisos gratuitos por Telegram
 

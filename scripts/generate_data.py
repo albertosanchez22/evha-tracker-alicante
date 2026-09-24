@@ -12,10 +12,8 @@ MUNICIPIOS_FILTRO = {"ALICANTE/ALACANT", "SAN VICENTE DEL RASPEIG"}
 
 
 def siguiente_actualizacion(now: datetime) -> datetime:
-    inicio = now.replace(hour=0, minute=17, second=0, microsecond=0)
-    siguientes = [inicio + timedelta(hours=6 * indice) for indice in range(4)]
-    siguientes.append(inicio + timedelta(days=1))
-    return next(fecha for fecha in siguientes if fecha > now)
+    siguiente_minuto = 5 - now.minute % 5
+    return now.replace(second=0, microsecond=0) + timedelta(minutes=siguiente_minuto)
 
 
 def main_script() -> None:

@@ -2,7 +2,7 @@ name: Actualizar promociones EVHA
 
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       test_notification:
