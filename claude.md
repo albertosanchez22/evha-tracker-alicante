@@ -34,7 +34,8 @@ https://github.com/albertosanchez22/evha-tracker-alicante
 2. `python scripts/generate_data.py` descarga EVHA y escribe un nuevo JSON con `ultimaActualizacion` y `proximaActualizacion` seis horas despues.
 3. `scripts/notify_changes.py` compara promociones nuevas, retiradas y cambios en fase, estado de inscripcion, constructora, calle, barrio o disponibilidad.
 4. Telegram envia un mensaje en cada ejecucion cuando existen `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID`. Si no hay cambios, envia `EVHA Tracker: no hay nada nuevo en la actualizacion.`
-5. El workflow hace commit si cambia `public/data.json` y hace push. Ese push dispara el despliegue de Pages.
+5. El workflow hace commit si cambia `public/data.json` y hace push.
+6. El mismo workflow publica `public/` en GitHub Pages; el despliegue no depende de que el `push` automático dispare otro workflow.
 
 ## Contador del frontend
 
