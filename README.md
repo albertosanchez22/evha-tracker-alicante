@@ -37,8 +37,6 @@ La web está publicada en:
 
 Los workflows de `.github/workflows/` publican la web al hacer push y regeneran los datos cada 5 minutos. También se pueden ejecutar manualmente desde la pestaña **Actions** de GitHub.
 
-El botón **Actualizar ahora** de la web abre el workflow de GitHub Actions. Tras iniciar sesión en GitHub, pulsa **Run workflow** para descargar los datos, compararlos con la versión anterior y enviar el aviso por Telegram si está configurado.
-
 ## Avisos gratuitos por Telegram
 
 El workflow compara cada actualización con la anterior y detecta promociones nuevas, retiradas y cambios en fase, estado de inscripción, constructora, calle, barrio o viviendas/modalidad. Envía un mensaje en cada ejecución; si no hay cambios, indica que no hay nada nuevo. Para activar avisos:
