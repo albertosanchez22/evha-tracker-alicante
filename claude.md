@@ -31,7 +31,7 @@ https://github.com/albertosanchez22/evha-tracker-alicante
 ## Flujo de actualizacion
 
 1. GitHub Actions copia el JSON anterior a `/tmp/data-anterior.json`.
-2. `python scripts/generate_data.py` descarga EVHA y escribe un nuevo JSON con `ultimaActualizacion` y `proximaActualizacion` seis horas despues.
+2. `python scripts/generate_data.py` descarga EVHA y escribe un nuevo JSON con `ultimaActualizacion` y `proximaActualizacion` alineada con la siguiente ejecucion del cron.
 3. `scripts/notify_changes.py` compara promociones nuevas, retiradas y cambios en fase, estado de inscripcion, constructora, calle, barrio o disponibilidad.
 4. Telegram envia un mensaje en cada ejecucion cuando existen `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID`. Si no hay cambios, envia `EVHA Tracker: no hay nada nuevo en la actualizacion.`
 5. El workflow hace commit si cambia `public/data.json` y hace push.

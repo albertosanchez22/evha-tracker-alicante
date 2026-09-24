@@ -11,6 +11,13 @@ OUTPUT = Path(__file__).resolve().parents[1] / "public" / "data.json"
 MUNICIPIOS_FILTRO = {"ALICANTE/ALACANT", "SAN VICENTE DEL RASPEIG"}
 
 
+def siguiente_actualizacion(now: datetime) -> datetime:
+    inicio = now.replace(hour=0, minute=17, second=0, microsecond=0)
+    siguientes = [inicio + timedelta(hours=6 * indice) for indice in range(4)]
+    siguientes.append(inicio + timedelta(days=1))
+    return next(fecha for fecha in siguientes if fecha > now)
+
+
 def main_script() -> None:
     promociones = []
     vistos = set()
@@ -35,7 +42,7 @@ def main_script() -> None:
     data = {
         "promociones": sorted(promociones, key=lambda item: item["expediente"]),
         "ultimaActualizacion": now.isoformat(),
-        "proximaActualizacion": (now + timedelta(hours=6)).isoformat(),
+        "proximaActualizacion": siguiente_actualizacion(now).isoformat(),
     }
     for promocion in data["promociones"]:
         promocion.pop("coordenadas", None)
