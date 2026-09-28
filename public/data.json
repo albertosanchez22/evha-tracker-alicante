@@ -220,12 +220,16 @@
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
         {
-          "unidades": 21,
+          "unidades": 22,
           "modalidad": "VENTA"
+        },
+        {
+          "unidades": 6,
+          "modalidad": "ALQUILER EVHA"
         }
       ],
-      "fase": "SL",
-      "fase_nombre": "En licitacion",
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
       "barrio": "Rabassa"
     },
     {
@@ -237,12 +241,16 @@
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
         {
-          "unidades": 18,
+          "unidades": 23,
           "modalidad": "VENTA"
+        },
+        {
+          "unidades": 5,
+          "modalidad": "ALQUILER EVHA"
         }
       ],
-      "fase": "SL",
-      "fase_nombre": "En licitacion",
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
       "barrio": "Rabassa"
     },
     {
@@ -254,12 +262,16 @@
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
         {
-          "unidades": 30,
+          "unidades": 45,
           "modalidad": "VENTA"
+        },
+        {
+          "unidades": 12,
+          "modalidad": "ALQUILER EVHA"
         }
       ],
-      "fase": "SL",
-      "fase_nombre": "En licitacion",
+      "fase": "SA",
+      "fase_nombre": "Adjudicadas",
       "barrio": "Rabassa"
     },
     {
@@ -322,6 +334,6 @@
       "barrio": "Aigua Amarga"
     }
   ],
-  "ultimaActualizacion": "2026-09-28T07:32:22.912007+00:00",
-  "proximaActualizacion": "2026-09-28T07:35:00+00:00"
+  "ultimaActualizacion": "2026-09-28T15:51:03.876247+00:00",
+  "proximaActualizacion": "2026-09-28T15:55:00+00:00"
 }
