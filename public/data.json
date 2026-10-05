@@ -215,7 +215,7 @@
       "expediente": "A-ECSA-25/00094",
       "municipio": "ALICANTE/ALACANT",
       "provincia": "ALICANTE",
-      "promotor": "",
+      "promotor": "UTE ALCUDIA SERVICIOS Y OBRAS, S.L. - PROM 95, S.L",
       "direccion": "CL AVELLANEDA  R-1  - APD/4 RABASA II B",
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
@@ -236,7 +236,7 @@
       "expediente": "A-ECSA-25/00095",
       "municipio": "ALICANTE/ALACANT",
       "provincia": "ALICANTE",
-      "promotor": "",
+      "promotor": "UTE ALCUDIA SERVICIOS Y OBRAS, S.L. - PROM 95, S.L",
       "direccion": "CL AVELLANEDA  R-2 - APD/4 RABASA II B",
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
@@ -257,7 +257,7 @@
       "expediente": "A-ECSA-25/00096",
       "municipio": "ALICANTE/ALACANT",
       "provincia": "ALICANTE",
-      "promotor": "",
+      "promotor": "UTE ALCUDIA SERVICIOS Y OBRAS, S.L. - PROM 95, S.L",
       "direccion": "CL AVELLANEDA  R-3 - APD/4 RABASA II B",
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
@@ -334,6 +334,6 @@
       "barrio": "Aigua Amarga"
     }
   ],
-  "ultimaActualizacion": "2026-10-05T05:26:25.958992+00:00",
-  "proximaActualizacion": "2026-10-05T05:30:00+00:00"
+  "ultimaActualizacion": "2026-10-05T12:29:20.848673+00:00",
+  "proximaActualizacion": "2026-10-05T12:30:00+00:00"
 }
