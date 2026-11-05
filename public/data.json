@@ -9,12 +9,8 @@
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
         {
-          "unidades": 11,
+          "unidades": 14,
           "modalidad": "VENTA"
-        },
-        {
-          "unidades": 3,
-          "modalidad": "ALQUILER"
         }
       ],
       "fase": "SL",
@@ -30,12 +26,8 @@
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
         {
-          "unidades": 17,
+          "unidades": 25,
           "modalidad": "VENTA"
-        },
-        {
-          "unidades": 8,
-          "modalidad": "ALQUILER"
         }
       ],
       "fase": "SL",
@@ -51,12 +43,8 @@
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
         {
-          "unidades": 63,
+          "unidades": 79,
           "modalidad": "VENTA"
-        },
-        {
-          "unidades": 16,
-          "modalidad": "ALQUILER"
         }
       ],
       "fase": "SL",
@@ -89,12 +77,8 @@
       "estado_inscripcion": "No indicado",
       "disponibilidad": [
         {
-          "unidades": 41,
+          "unidades": 55,
           "modalidad": "VENTA"
-        },
-        {
-          "unidades": 14,
-          "modalidad": "ALQUILER"
         }
       ],
       "fase": "SL",
@@ -350,6 +334,6 @@
       "barrio": "Aigua Amarga"
     }
   ],
-  "ultimaActualizacion": "2026-11-05T09:34:44.457825+00:00",
-  "proximaActualizacion": "2026-11-05T09:35:00+00:00"
+  "ultimaActualizacion": "2026-11-05T17:36:42.101061+00:00",
+  "proximaActualizacion": "2026-11-05T17:40:00+00:00"
 }
